@@ -13,7 +13,8 @@ vim.opt.nu = true
 require("config.lazy")
 
 -- Neotree Settings
-vim.keymap.set('n', '<leader>n', ':Neotree filesystem reveal left<CR>')
+vim.keymap.set('n', '<leader>no', ':Neotree filesystem reveal left<CR>')
+vim.keymap.set('n', '<leader>nc', ':Neotree close<CR>')
 
 -- Treesitter Settings
 local config = require('nvim-treesitter.configs')
@@ -33,7 +34,4 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 require('lualine').setup {
   options = { theme = 'gruvbox-material' }
 }
-
--- Colorscheme Settings
-vim.cmd.colorscheme("gruvbox-material")
 
