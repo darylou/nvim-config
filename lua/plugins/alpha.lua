@@ -33,15 +33,19 @@ return {
       [[⠀⠀⠀⠀⠀⠀⠠⠾⣿⣿⣿⣶⣤⣤⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣠⣶⣦⣄⡀⠀⠀⣶⢒⠲⣄]],
       [[⣾⣥⣤⣼⣿⣶⣶⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣾⣵⣾⡿]],
       [[                                                        ]],
-      [[                          darylou                      ]],
+      [[                       NVIM 0.10.2                      ]],
     }
 
     section.buttons.val = {
       dashboard.button("e", "    New file", ":ene <BAR> startinsert <CR>"),
       dashboard.button("f", "    Find file", ":Telescope find_files<CR>"),
       dashboard.button("r", "    Recent", ":Telescope oldfiles<CR>"),
-      dashboard.button("s", "    Settings", ":e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<CR>"),
+      dashboard.button("s", "    Settings", ":e $MYVIMRC | :cd ~/.config/nvim | :Neotree filesystem reveal left<CR>"),
       dashboard.button("q", "    Quit NVIM", ":qa<CR>"),
+    }
+
+    section.footer.val = {
+      " darylou"
     }
 
     local headerPadding = fn.max({ 2, fn.floor(fn.winheight(0) * 0.2) })
@@ -52,6 +56,7 @@ return {
         section.header,
         { type = "padding", val = 2 },
         section.buttons,
+        section.footer,
       },
     })
   end,
